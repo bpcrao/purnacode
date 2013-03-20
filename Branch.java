@@ -1,5 +1,6 @@
 /**
- * 
+ * Class which defines the data structure
+ * of branch and leaves
  */
 
 /**
@@ -9,18 +10,20 @@
 public class Branch {
 	public Branch[] branches;
 	public Leaf[] leafs;
+
 	/**
 	 * @param leaves
 	 */
 	public void setLeaves(Leaf[] leaves) {
-		this.leafs=leaves;
-		
+		this.leafs = leaves;
+
 	}
+
 	/**
 	 * @param branches
 	 */
 	public void setBranches(Branch[] branches) {
-		this.branches=branches;
+		this.branches = branches;
 	}
 
 }

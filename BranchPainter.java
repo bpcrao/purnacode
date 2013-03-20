@@ -1,4 +1,6 @@
 /**
+ * Class which paints the leaves red
+ * also creates a mock branches and leaves
  * 
  */
 
@@ -46,7 +48,6 @@ public class BranchPainter {
 		}
 		mainBranch.setBranches(branches);
 		mainBranch.setLeaves(leaves);
-
 	}
 
 }
