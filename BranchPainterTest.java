@@ -7,7 +7,7 @@ import org.junit.Test;
  */
 
 /**
- * @author purnachandrarao
+ * @author Purna
  * 
  */
 public class BranchPainterTest {

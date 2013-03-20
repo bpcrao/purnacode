@@ -3,7 +3,7 @@
  */
 
 /**
- * @author purnachandrarao
+ * @author Purna
  * 
  */
 public class Branch {
@@ -17,11 +17,10 @@ public class Branch {
 		
 	}
 	/**
-	 * @param branches2
+	 * @param branches
 	 */
-	public void setBranches(Branch[] branches2) {
-		// TODO Auto-generated method stub
-		this.branches=branches2;
+	public void setBranches(Branch[] branches) {
+		this.branches=branches;
 	}
 
 }

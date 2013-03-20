@@ -19,6 +19,11 @@ public class CardsShuffler {
 		shuffleCards(cards);
 	}
 
+	/**
+	 * shuffles the cards
+	 * 
+	 * @param cards
+	 */
 	private static void shuffleCards(int[] cards) {
 
 		for (int index = 1; index < cards.length; index++) {
@@ -30,6 +35,13 @@ public class CardsShuffler {
 
 	}
 
+	/**
+	 * Swaps numbers 
+	 * 
+	 * @param cards
+	 * @param index
+	 * @param cardToShuffleWith
+	 */
 	private static void swapNumbers(int[] cards, int index,
 			int cardToShuffleWith) {
 		int temp = cards[index];

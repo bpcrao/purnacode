@@ -3,12 +3,14 @@
  */
 
 /**
- * @author purnachandrarao
+ * @author Purna
  * 
  */
 public class BranchPainter {
 
 	/**
+	 * paints all leaves red
+	 * 
 	 * @param mainBranch
 	 */
 	public static void paintAllRed(Branch mainBranch) {
@@ -25,19 +27,21 @@ public class BranchPainter {
 	}
 
 	/**
+	 * just creates branches and leaves
+	 * 
 	 * @param mainBranch
-	 * @param i
+	 * @param numberOfBranches
 	 */
-	public static void createSubBranches(Branch mainBranch, int i) {
-		if (i == 0)
+	public static void createSubBranches(Branch mainBranch, int numberOfBranches) {
+		if (numberOfBranches == 0)
 			return;
-		Branch branches[] = new Branch[i];
-		Leaf leaves[] = new Leaf[i];
-		i--;
-		for (int j = 0; j <= i; j++) {
-			branches[j] = new Branch();
-			leaves[j] = new Leaf();
-			createSubBranches(branches[j], i);
+		Branch branches[] = new Branch[numberOfBranches];
+		Leaf leaves[] = new Leaf[numberOfBranches];
+		numberOfBranches--;
+		for (int index = 0; index <= numberOfBranches; index++) {
+			branches[index] = new Branch();
+			leaves[index] = new Leaf();
+			createSubBranches(branches[index], numberOfBranches);
 
 		}
 		mainBranch.setBranches(branches);
