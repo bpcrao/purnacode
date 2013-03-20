@@ -4,11 +4,13 @@ import java.util.Random;
 /**
  * @author Purna
  * 
+ *         this class just shuffles the given set of cards assuming there are 52
+ *         cards 1-52
  */
 public class CardsShuffler {
-	
+
 	public static Random randomGenerator = new Random();
-	
+
 	public static void main(String args[]) {
 		int[] cards = new int[52];
 		for (int index = 0; index < cards.length; index++) {
@@ -20,7 +22,9 @@ public class CardsShuffler {
 	}
 
 	/**
-	 * shuffles the cards
+	 * shuffles the cards using
+	 * 
+	 * Knuth Shuffle
 	 * 
 	 * @param cards
 	 */
@@ -29,14 +33,14 @@ public class CardsShuffler {
 		for (int index = 1; index < cards.length; index++) {
 			int cardToShuffleWith = randomGenerator.nextInt(index);
 			swapNumbers(cards, index, cardToShuffleWith);
-			System.out.println(index+"<=>"+cardToShuffleWith);
+			// printing the cards on every shuffle
 			printCards(cards);
 		}
 
 	}
 
 	/**
-	 * Swaps numbers 
+	 * Swaps two Cards
 	 * 
 	 * @param cards
 	 * @param index
