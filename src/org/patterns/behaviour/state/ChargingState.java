@@ -40,7 +40,7 @@ public class ChargingState implements BatteryState {
 	 * @see org.patterns.behaviour.state.BatteryState#makeCall(int)
 	 */
 	@Override
-	public void makeCall(int time) {
+	public void useCharge(int time) {
 		System.out.println("Call");
 
 	}

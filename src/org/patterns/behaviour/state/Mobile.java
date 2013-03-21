@@ -32,7 +32,7 @@ public class Mobile {
 	 * @param i
 	 */
 	public void makeCall(int i) {
-		this.batteryState.makeCall(i);
+		this.batteryState.useCharge(i);
 
 	}
 

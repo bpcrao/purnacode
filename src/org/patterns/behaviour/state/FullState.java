@@ -36,7 +36,7 @@ public class FullState implements BatteryState {
 	 * @see org.patterns.behaviour.state.BatteryState#makeCall(int)
 	 */
 	@Override
-	public void makeCall(int time) {
+	public void useCharge(int time) {
 		if(time>70){		
 		mobile.setState(new LowState());
 		}

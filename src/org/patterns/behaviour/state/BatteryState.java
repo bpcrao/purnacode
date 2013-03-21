@@ -11,7 +11,7 @@ public interface BatteryState {
 
 	void charge(int time);
 
-	void makeCall(int time);
+	void useCharge(int time);
 
 	int getCharge();
 
