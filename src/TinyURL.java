@@ -1,12 +1,6 @@
 /**
  * @author Purna
  * 
- * 
- * 
- *         while (i <= -radix) { buf[charPos--] = digits[-(i % radix)]; i = i /
- *         radix; } buf[charPos] = digits[-i];
- * 
- *         taken from Integer.toString()
  */
 public class TinyURL {
 
@@ -19,9 +13,7 @@ public class TinyURL {
 			"M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y",
 			"Z" };
 
-
 	public static void main(String arp[]) {
-
 		String shortenedUrl = shortenURL("http://www.stumbleupon.com/su/28KqXE/www.funnyordie.com/slideshows/ff413570ec/awesomely-inappropriate-test-answers-from-kids/");
 		System.out.println("http://tinyurl.com/" + shortenedUrl);
 	}
@@ -29,13 +21,14 @@ public class TinyURL {
 	/**
 	 * shorten a url
 	 * 
+	 * Integer.toString
+	 *  
 	 * @param string
-	 * @return 
+	 * @return
 	 */
 	private static String shortenURL(String string) {
 		int numberToEnode = uniqueId++;
 		StringBuilder code = new StringBuilder();
-		System.out.println();
 		while (numberToEnode > radix) {
 			code.append(elements[numberToEnode % radix]);
 			numberToEnode = numberToEnode / radix;
