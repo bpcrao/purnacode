@@ -30,15 +30,15 @@ public class TinyURL {
 	 * shorten a url
 	 * 
 	 * @param string
-	 * @return
+	 * @return 
 	 */
 	private static String shortenURL(String string) {
-		int uniqueId1 = uniqueId++;
+		int numberToEnode = uniqueId++;
 		StringBuilder code = new StringBuilder();
 		System.out.println();
-		while (uniqueId1 > radix) {
-			code.append(elements[uniqueId1 % radix]);
-			uniqueId1 = uniqueId1 / radix;
+		while (numberToEnode > radix) {
+			code.append(elements[numberToEnode % radix]);
+			numberToEnode = numberToEnode / radix;
 		}
 		return code.toString();
 	}
