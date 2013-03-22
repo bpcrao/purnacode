@@ -10,7 +10,7 @@ package org.patterns.creational.builder;
 public class ComputerAssembler {
 
 	public IComputer assembleComputer() {
-		ComputerPartsBuilder builder = new ComputerPartsBuilder();
+		ComputerBuilderIntf builder = new ComputerPartsBuilder();
 		builder.buildBasicComputer();
 		builder.buildMouse();
 		return builder.getComputer();
