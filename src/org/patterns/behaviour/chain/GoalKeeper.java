@@ -14,6 +14,11 @@ public class GoalKeeper extends PlayerIntf {
 	 */
 	@Override
 	public void handleBall() {
+		if (ComputerPlayer.getBallLocation() < 10) {
+			System.out.println("goaal keeper");
+		} else {
+			System.out.println("GOAL");
+		}
 
 	}
 

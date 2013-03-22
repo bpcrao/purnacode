@@ -14,7 +14,12 @@ public class MidFielder extends PlayerIntf {
 	 */
 	@Override
 	public void handleBall() {
-		// TODO Auto-generated method stub
+		if (ComputerPlayer.getBallLocation() < 70) {
+			System.out.println("mid player ");
+		} else {
+			this.succesor.handleBall();
+		}
+
 
 	}
 

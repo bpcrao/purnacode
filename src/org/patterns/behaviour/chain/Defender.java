@@ -16,7 +16,12 @@ public class Defender extends PlayerIntf {
 	 */
 	@Override
 	public void handleBall() {
-		// TODO Auto-generated method stub
+		if (ComputerPlayer.getBallLocation() < 30) {
+			System.out.println("defending");
+		} else {
+			this.succesor.handleBall();
+		}
+
 
 	}
 
