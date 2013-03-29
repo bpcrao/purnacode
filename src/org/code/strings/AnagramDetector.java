@@ -9,7 +9,7 @@ package org.code.strings;
  */
 public class AnagramDetector {
 
-	/**
+	/** Checks if two words are anagrams or not
 	 * @param firstWord
 	 * @param secondWord
 	 */
