@@ -18,5 +18,10 @@ public class AnagramDetectorTest {
 	public void testAnagram() {
 		Assert.assertTrue(AnagramDetector.areAnagram("MARY","ARMY"));
 	}
+	
+	@Test
+	public void testAnagram2() {
+		Assert.assertTrue(AnagramDetector.areAnagram("MAARY","AARMY"));
+	}
 
 }
