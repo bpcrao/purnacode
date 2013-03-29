@@ -17,6 +17,8 @@ public class LinkedListDriver {
 		linkedList.addNode(3);
 		linkedList.addNode(4);
 		linkedList.printLinkedList();
+		linkedList.deleteNode(3);
+		linkedList.printLinkedList();
 
 	}
 

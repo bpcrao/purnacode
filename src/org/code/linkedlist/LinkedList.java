@@ -36,7 +36,7 @@ public class LinkedList {
 	}
 
 	/**
-	 * deletes a node from linked list 
+	 * deletes a node from linked list
 	 * 
 	 * @param data
 	 * @return
@@ -50,22 +50,23 @@ public class LinkedList {
 			return true;
 		}
 		temp = temp.next;
+		Node prev = temp;
 		while (temp != null) {
 			if (temp.data == data) {
-				temp.next = temp.next.next;
+				prev.next = temp.next;
 				return true;
 			}
+			prev = temp;
 			temp = temp.next;
 		}
 
 		return false;
 	}
-	
-	
-	public void printLinkedList(){
-		Node temp=head;
+
+	public void printLinkedList() {
+		Node temp = head;
 		while (temp != null) {
-			System.out.print(temp.data+"->");
+			System.out.print(temp.data + "->");
 			temp = temp.next;
 		}
 		System.out.println();
