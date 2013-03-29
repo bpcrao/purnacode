@@ -27,6 +27,7 @@ public class LinkedList {
 		Node temp = head;
 		if (head == null) {
 			head = node;
+			return;
 		}
 		while (temp.next != null) {
 			temp = temp.next;
@@ -34,6 +35,12 @@ public class LinkedList {
 		temp.next = node;
 	}
 
+	/**
+	 * deletes a node from linked list 
+	 * 
+	 * @param data
+	 * @return
+	 */
 	public boolean deleteNode(int data) {
 		Node temp = this.head;
 
@@ -42,9 +49,26 @@ public class LinkedList {
 			this.head = temp.next;
 			return true;
 		}
+		temp = temp.next;
+		while (temp != null) {
+			if (temp.data == data) {
+				temp.next = temp.next.next;
+				return true;
+			}
+			temp = temp.next;
+		}
 
-		
 		return false;
+	}
+	
+	
+	public void printLinkedList(){
+		Node temp=head;
+		while (temp != null) {
+			System.out.print(temp.data+"->");
+			temp = temp.next;
+		}
+		System.out.println();
 	}
 
 }
