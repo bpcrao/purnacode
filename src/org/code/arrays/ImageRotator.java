@@ -33,7 +33,7 @@ public class ImageRotator {
 	private static void printMatrix() {
 		for (int i = 0; i < imageMatrix.length; i++) {
 			for (int j = 0; j < imageMatrix.length; j++) {
-				System.out.print(imageMatrix[i][j] + " ");
+				System.out.print(" "+" "+imageMatrix[i][j] );
 			}
 			System.out.println("");
 		}
