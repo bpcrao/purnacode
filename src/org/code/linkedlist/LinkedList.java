@@ -9,7 +9,7 @@ package org.code.linkedlist;
  */
 public class LinkedList {
 
-	private Node head = null;
+	public Node head = null;
 
 	/**
 	 * 
