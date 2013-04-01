@@ -84,6 +84,7 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
 	private static void checkifitsBalancedTree(Node<Integer, String> node) {
 		int minHeight = getMinHeight(node);
 		int maxHeight = getMaxHeight(node);
+		System.out.println(maxHeight);
 		if (maxHeight - minHeight > 1) {
 			System.out.println("its not a balanced tree");
 		} else {
@@ -99,7 +100,7 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
 	private static int getMaxHeight(Node<Integer, String> node) {
 		if (node == null) {
 			return 0;
-		}
+		}		
 		return 1 + Math.max(getMaxHeight(node.left), getMaxHeight(node.right));
 	}
 
