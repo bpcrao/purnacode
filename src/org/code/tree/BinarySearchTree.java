@@ -3,6 +3,9 @@
  */
 package org.code.tree;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author Purna
  * 
@@ -75,6 +78,37 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
 		bst.addNode(new Integer(11), "one");
 		printInOrder(bst.root);
 		checkifitsBalancedTree(bst.root);
+		List<List<Node>> nodeList = new ArrayList<List<Node>>();
+		ArrayList<Node> element = new ArrayList<Node>();
+		element.add(bst.root);
+		nodeList.add(element);
+		makeLevelOrderList(nodeList, 0);
+
+		System.out.println(nodeList);
+
+	}
+
+	/**
+	 * @param node
+	 * @param nodeList
+	 */
+	private static void makeLevelOrderList(List<List<Node>> nodeList, int level) {
+		List<Node> list = nodeList.get(level);
+		List<Node> listSub = new ArrayList<Node>();
+		for (Node nodeT : list) {
+			if (nodeT.left != null) {
+				listSub.add(nodeT.left);
+
+			}
+			if (nodeT.right != null) {
+				listSub.add(nodeT.right);
+			}
+		}
+		if (listSub.size() > 0) {
+			level++;
+			nodeList.add(listSub);
+			makeLevelOrderList(nodeList, level);
+		}
 
 	}
 
@@ -100,7 +134,7 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
 	private static int getMaxHeight(Node<Integer, String> node) {
 		if (node == null) {
 			return 0;
-		}		
+		}
 		return 1 + Math.max(getMaxHeight(node.left), getMaxHeight(node.right));
 	}
 
@@ -117,6 +151,16 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
 }
 
 class Node<T extends Comparable<T>, Value> {
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Node [keyT=" + keyT + "]";
+	}
+
 	T keyT;
 	Value value;
 	Node<T, Value> left;
