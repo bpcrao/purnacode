@@ -34,7 +34,7 @@ public class EagerSingleton implements Cloneable,Serializable {
 		throw new CloneNotSupportedException();
 	}
 
-	public Object readResolve() throws ObjectStreamException{
-		return getInstance();
-	}
+//	public Object readResolve() throws ObjectStreamException{
+//		return getInstance();
+//	}
 }
