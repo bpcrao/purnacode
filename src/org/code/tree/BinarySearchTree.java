@@ -22,14 +22,17 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
 			Node<Key, Value> nodeTemp = new Node<Key, Value>(key, value);
 			if (this.root == null) {
 				this.root = nodeTemp;
+				
 			}
 			return nodeTemp;
 		}
 		int compareTo = key.compareTo((Key) node.keyT);
 		if (compareTo < 0) {
 			node.left = addNode(node.left, key, value);
+			node.left.parent=node;
 		} else if (compareTo > 0) {
 			node.right = addNode(node.right, key, value);
+			node.right.parent=node;
 		} else {
 			node.keyT = key;
 			node.value = value;
@@ -66,16 +69,16 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
 	 */
 	public static void main(String[] args) {
 		BinarySearchTree<Integer, String> bst = new BinarySearchTree<Integer, String>();
-		bst.addNode(new Integer(7), "seven");
-		bst.addNode(new Integer(8), "eight");
-		bst.addNode(new Integer(9), "nine");
-		bst.addNode(new Integer(15), "five");
-		bst.addNode(new Integer(16), "six");
-		bst.addNode(new Integer(14), "four");
-		bst.addNode(new Integer(13), "three");
+		bst.addNode(new Integer(5), "seven");
+		bst.addNode(new Integer(6), "eight");
+		bst.addNode(new Integer(3), "nine");
+		bst.addNode(new Integer(8), "five");
+		bst.addNode(new Integer(4), "six");
+		bst.addNode(new Integer(7), "four");
+		bst.addNode(new Integer(2), "three");
 		bst.addNode(new Integer(10), "ten");
-		bst.addNode(new Integer(12), "two");
-		bst.addNode(new Integer(11), "one");
+		bst.addNode(new Integer(1), "two");
+		bst.addNode(new Integer(9), "one");
 		printInOrder(bst.root);
 		checkifitsBalancedTree(bst.root);
 		List<List<Node>> nodeList = new ArrayList<List<Node>>();
@@ -84,8 +87,56 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
 		nodeList.add(element);
 		makeLevelOrderList(nodeList, 0);
 
-		System.out.println(nodeList);
+		for (List<Node> lis : nodeList) {
+			System.out.println(lis);
+		}
 
+		Node in = inOrderSuccessorOf(6, bst.root);
+		System.out.println(in);
+	}
+
+	/**
+	 * @param i
+	 * @param root
+	 * @return
+	 */
+	private static Node inOrderSuccessorOf(int i, Node<Integer, String> root) {
+		Node subNode = findNode(i, root);
+		if (subNode.right != null) {
+			return findLeftMost(subNode.right);
+		}
+		return null;
+	}
+
+	/**
+	 * @param right
+	 * @return
+	 */
+	private static Node findLeftMost(Node right) {
+		if (right.left == null) {
+			return right;
+		}
+		while (right.left != null) {
+			return findLeftMost(right.left);
+		}
+		return right;
+	}
+
+	/**
+	 * @param i
+	 * @param root
+	 * @return
+	 */
+	private static Node findNode(int i, Node<Integer, String> root) {
+
+		if (i > root.keyT) {
+			return findNode(i, root.right);
+		} else if (i < root.keyT) {
+			return findNode(i, root.left);
+		} else if (i == root.keyT) {
+			return root;
+		}
+		return null;
 	}
 
 	/**
@@ -158,13 +209,14 @@ class Node<T extends Comparable<T>, Value> {
 	 */
 	@Override
 	public String toString() {
-		return "Node [keyT=" + keyT + "]";
+		return "" + keyT;
 	}
 
 	T keyT;
 	Value value;
 	Node<T, Value> left;
 	Node<T, Value> right;
+	Node<T, Value> parent;
 
 	Node(T key, Value val) {
 		this.keyT = key;
