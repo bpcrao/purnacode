@@ -15,9 +15,11 @@ public class Driver {
 			IOException {
 		Graph graph = GraphBuilder.buildGraph();
 		DepthFirstSearch dfs = new DepthFirstSearch(graph, 0);
-//		System.out.println(graph);
-//		System.out.println(dfs);
 		System.out.println(dfs.pathTo(3));
-		System.out.println(dfs.pathTo(2));
+		
+		BreadthFirstSearch bfs = new BreadthFirstSearch(graph, 0);
+		System.out.println(bfs);
+		System.out.println(bfs.pathTo(3));
+
 	}
 }
