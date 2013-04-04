@@ -40,7 +40,7 @@ public class NthElement {
 			if (counter >= nTH - 1) {
 				firstPtr = previous;
 				previous = previous.next;
-			}			
+			}
 			counter++;
 		}
 		System.out.println("previous=" + firstPtr.data);
