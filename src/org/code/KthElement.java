@@ -15,9 +15,13 @@ public class KthElement {
 	private static Random rd;
 
 	public static void main(String[] args) {
-		Object[] arr = { 9, 7, 3, 1, 2, 4, 6, 5 };
+		int[] arr = { 9, 7, 3, 1, 2, 4, 6, 5 };
+		ArrayList ar = new ArrayList();
+		for (int i = 0; i < arr.length; i++) {
+			ar.add(new Integer(arr[i]));
+		}
 		rd = new Random();
-		System.out.println(findKthElement(arr, 5));
+		System.out.println(findKthElement(ar.toArray(), 5));
 	}
 
 	/**
