@@ -16,7 +16,7 @@ package org.code;
 public class FizzBuzz {
 
 	public static void main(String args[]) {
-		for (int number = 1; number <= 30; number++) {
+		for (int number = 1; number <= 100; number++) {
 			printFizzBuzz(number);
 		}
 	}
