@@ -9,14 +9,6 @@ package org.code.dp;
  */
 public class ChangeMaker {
 
-	/**
-	 * j
-	 * 
-	 */
-	public ChangeMaker() {
-		// TODO Auto-generated constructor stub
-	}
-
 	static int makeChange(int amount, int denomination) {
 
 		if (denomination == 1) {
