@@ -43,6 +43,6 @@ public class ChangeMaker {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(ChangeMaker.makeChange(10, 5));
+		System.out.println(ChangeMaker.makeChange(30, 25));
 	}
 }
