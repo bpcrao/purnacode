@@ -19,9 +19,11 @@ public class FizzBuzzHR {
 	public static void main(String[] args) {
 
 		for (int i = 0; i < 100; i++) {
-
-			System.out.println(i % 3 == 0 ? "Fizz" + (i % 5 == 0 ? "Buzz" : "")
-					: i % 5 == 0 ? "Buzz" : i + "");
+			String p="";
+			p=i % 3 == 0 ? "Fizz":"";
+			p=i % 5 == 0 ? "Buzz":"";
+			p=p.isEmpty()?i+"":p;
+			System.out.println(p);
 		}
 	}
 
