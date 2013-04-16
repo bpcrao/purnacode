@@ -13,7 +13,7 @@ public class CardsShuffler {
 	public static Random randomGenerator = new Random();
 
 	public static void main(String args[]) {
-		int[] cards = new int[52];
+		int[] cards = new int[5];
 		for (int index = 0; index < cards.length; index++) {
 			cards[index] = index + 1;
 		}

@@ -25,9 +25,7 @@ public class NQueens {
 
 	public static void main(String[] args) {
 		NQueens nQueens = new NQueens(8);
-		System.out.println("-------Solutions--------------");
 		nQueens.placeQueen(0);
-
 	}
 
 	/**
@@ -73,7 +71,7 @@ public class NQueens {
 				if (queenPlaceInRow[i] == j) {
 					System.out.print(" Q ");
 				} else {
-					System.out.print(" - ");
+					System.out.print(" . ");
 				}
 
 			}

@@ -1,4 +1,5 @@
 package org.code;
+
 /**
  * 
  */
@@ -10,7 +11,7 @@ package org.code;
 public class DuplicateCharRemover {
 
 	public static void main(String args[]) {
-		char[] strWithDup = { 'h','h', 'e', 'l', 'l', 'o','e','s','s' };
+		char[] strWithDup = { 'h', 'h', 'e', 'l', 'l', 'o', 'e', 's', 's' };
 		removeDuplicates(strWithDup);
 		System.out.println(strWithDup);
 	}
