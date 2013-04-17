@@ -74,9 +74,6 @@ public class Krushkal {
 		}
 
 		Arrays.sort(edges);
-
-		System.out.println(Arrays.toString(edges));
-
 		int finalGroup = edges.length + 1;
 		for (Edge node : edges) {
 			if (!map.get(node.groupA).equals(map.get(node.groupB))) {
@@ -87,14 +84,7 @@ public class Krushkal {
 				Krushkal.nodes.add(node);
 			}
 		}
-		System.out.println(Krushkal.nodes);
-		System.out.println("Cost:" + optimalCost);
-		return 0;
+		return optimalCost;
 	}
 
-	public static void main(String[] args) {
-		String[] inp1 = { "A", "B", "C", "D" };
-		int[] inp2 = { 2, 3, 1, 5, 4, 3 };
-		minimum_cost(inp1, inp2);
-	}
 }
