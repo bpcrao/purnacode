@@ -37,8 +37,6 @@ public class TinyURL {
 	private static void decodeURL(String string) {
 		int sum = 0;
 		for (int i = 0; i < string.length(); i++) {
-			System.out.println(map.get(string.charAt(i) + "") + " * " + " 62^"
-					+ (string.length() - i - 1));
 			sum += map.get(string.charAt(i) + "") * Math.pow(62, i);
 		}
 		System.out.println(sum);
@@ -55,13 +53,11 @@ public class TinyURL {
 	 */
 	private static String shortenURL(String url) {
 		int numberToEnode = uniqueId;
-
 		StringBuilder code = new StringBuilder();
 		while (numberToEnode > 0) {
 			code.append(elements[numberToEnode % radix]);
 			numberToEnode = numberToEnode / radix;
 		}
-		System.out.println(code + "END");
 		urlsMap.put(code.toString(), url);
 		return code.toString();
 	}
