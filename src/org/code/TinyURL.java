@@ -1,4 +1,6 @@
 package org.code;
+
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,7 +10,7 @@ import java.util.Map;
  */
 public class TinyURL {
 
-	private static int uniqueId = 678000;
+	private static int uniqueId = 1925;
 	private static int radix = 62;
 	private static Map<String, String> urlsMap = new HashMap<String, String>();
 	static String[] elements = { "a", "b", "c", "d", "e", "f", "g", "h", "i",
@@ -17,11 +19,29 @@ public class TinyURL {
 			"0", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
 			"M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y",
 			"Z" };
+	static public Map<String, Integer> map = new HashMap<String, Integer>();
 
 	public static void main(String arp[]) {
 		String shortenedUrl = shortenURL("http://www.stumbleupon.com/su/28KqXE/www.funnyordie.com/slideshows/ff413570ec/awesomely-inappropriate-test-answers-from-kids/");
 		System.out.println("To redirect to original URL");
 		System.out.println(urlsMap.get(shortenedUrl));
+		for (int index = 0; index < elements.length; index++) {
+			map.put(elements[index], new Integer(index));
+		}
+		decodeURL(shortenedUrl);
+	}
+
+	/**
+	 * @param string
+	 */
+	private static void decodeURL(String string) {
+		int sum = 0;
+		for (int i = 0; i < string.length(); i++) {
+			System.out.println(map.get(string.charAt(i) + "") + " * " + " 62^"
+					+ (string.length() - i - 1));
+			sum += map.get(string.charAt(i) + "") * Math.pow(62, i);
+		}
+		System.out.println(sum);
 	}
 
 	/**
@@ -34,13 +54,15 @@ public class TinyURL {
 	 * @return
 	 */
 	private static String shortenURL(String url) {
-		int numberToEnode = uniqueId++;
+		int numberToEnode = uniqueId;
+
 		StringBuilder code = new StringBuilder();
-		while (numberToEnode > radix) {
+		while (numberToEnode > 0) {
 			code.append(elements[numberToEnode % radix]);
 			numberToEnode = numberToEnode / radix;
 		}
-		urlsMap.put("http://tinyurl.com/"+code.toString(), url);
-		return "http://tinyurl.com/" + code.toString();
+		System.out.println(code + "END");
+		urlsMap.put(code.toString(), url);
+		return code.toString();
 	}
 }
