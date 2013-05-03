@@ -7,7 +7,7 @@ import java.util.Random;
  * 
  *         this class just shuffles the given set of cards assuming there are 52
  *         cards 1-52
- */
+ */ 
 public class CardsShuffler {
 
 	public static Random randomGenerator = new Random();

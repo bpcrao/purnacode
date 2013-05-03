@@ -46,7 +46,7 @@ public class Segregator {
 			return false;
 		}
 		for (int index = 2; index <= Math.sqrt(number); index++) {
-			if (((double) number / (double) index) - (number / index) == 0d) {
+			if (((double) number % (double) index)  == 0d) {
 				return false;
 			}
 		}

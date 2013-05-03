@@ -33,7 +33,7 @@ public class NQueens {
 	 */
 	private void placeQueen(int row) {
 
-		if (row == this.size) {			
+		if (row == this.size) {
 			printBoard();
 			return;
 		}

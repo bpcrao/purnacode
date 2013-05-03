@@ -38,6 +38,7 @@ public class DuplicateCharRemover {
 			}
 
 		}
+
 		while (currentIndex < word.length) {
 			word[currentIndex++] = ' ';
 		}

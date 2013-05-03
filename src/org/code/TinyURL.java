@@ -22,24 +22,29 @@ public class TinyURL {
 	static public Map<String, Integer> map = new HashMap<String, Integer>();
 
 	public static void main(String arp[]) {
-		String shortenedUrl = shortenURL("http://www.stumbleupon.com/su/28KqXE/www.funnyordie.com/slideshows/ff413570ec/awesomely-inappropriate-test-answers-from-kids/");
-		System.out.println("To redirect to original URL");
-		System.out.println(urlsMap.get(shortenedUrl));
+		String shortenedUrl = "";
+				
 		for (int index = 0; index < elements.length; index++) {
 			map.put(elements[index], new Integer(index));
 		}
-		decodeURL(shortenedUrl);
+		for (int i = 0; i < 10; i++) {
+			shortenedUrl=	shortenURL("http://www.stumbleupon.com/su/28KqXE/www.funnyordie.com/slideshows/ff413570ec/awesomely-inappropriate-test-answers-from-kids/");
+			System.out.println("To redirect to original URL http://bit.ly/"
+					+ shortenedUrl);
+			decodeURL(shortenedUrl);
+		}
+
 	}
 
 	/**
-	 * @param string
+	 * @param code
 	 */
-	private static void decodeURL(String string) {
+	private static void decodeURL(String code) {
 		int sum = 0;
-		for (int i = 0; i < string.length(); i++) {
-			sum += map.get(string.charAt(i) + "") * Math.pow(62, i);
+		for (int i = 0; i < code.length(); i++) {
+			sum+=	Math.pow(62,i)*map.get(code.charAt(i)+"");
 		}
-		System.out.println(sum);
+		System.out.println("decoded "+code+" to "+sum);
 	}
 
 	/**
@@ -52,13 +57,12 @@ public class TinyURL {
 	 * @return
 	 */
 	private static String shortenURL(String url) {
-		int numberToEnode = uniqueId;
-		StringBuilder code = new StringBuilder();
+		int numberToEnode = uniqueId++;
+		String temp = "";
 		while (numberToEnode > 0) {
-			code.append(elements[numberToEnode % radix]);
+			temp += elements[numberToEnode % radix];
 			numberToEnode = numberToEnode / radix;
 		}
-		urlsMap.put(code.toString(), url);
-		return code.toString();
+		return temp;
 	}
 }

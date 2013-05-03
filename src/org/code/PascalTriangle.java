@@ -22,7 +22,7 @@ package org.code;
 public class PascalTriangle {
 
 	public static void main(String ar[]) {
-		printPascal(9);
+		//printPascal(9);
 		printPascalMatrix(9);
 	}
 
@@ -33,14 +33,14 @@ public class PascalTriangle {
 	 */
 	private static void printPascalMatrix(int size) {
 		int[][] pascalTr = new int[size][];
-		for (int lineIndex = 0; lineIndex < size; lineIndex++) {
-			pascalTr[lineIndex] = new int[lineIndex + 1];
-			for (int colIndex = 0; colIndex < pascalTr[lineIndex].length; colIndex++) {
-				if (colIndex == 0 || colIndex == lineIndex) {
-					pascalTr[lineIndex][colIndex] = 1;
-				} else if (lineIndex > 1) {
-					pascalTr[lineIndex][colIndex] = pascalTr[lineIndex - 1][colIndex]
-							+ pascalTr[lineIndex - 1][colIndex - 1];
+		for (int index = 0; index < size; index++) {
+			pascalTr[index] = new int[index + 1];
+			for (int colIndex = 0; colIndex < pascalTr[index].length; colIndex++) {
+				if (colIndex == 0 || colIndex == index) {
+					pascalTr[index][colIndex] = 1;
+				} else if (index > 1) {
+					pascalTr[index][colIndex] = pascalTr[index - 1][colIndex]
+							+ pascalTr[index - 1][colIndex - 1];
 				}
 			}
 		}

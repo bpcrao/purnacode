@@ -13,7 +13,7 @@ public class NoStackOverflow {
 	private static void doSomething() {
 		String a = new String("this will thw");
 		HashMap as = new HashMap<>();
-		try {
+	 	try {
 			
 			doSomething();
 			return;

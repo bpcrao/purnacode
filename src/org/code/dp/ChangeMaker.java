@@ -16,7 +16,7 @@ public class ChangeMaker {
 			System.out.println("---------------------------------------");
 			return 1;
 		}
-		int next_denom = getNextDenom(denomination);
+	 	int next_denom = getNextDenom(denomination);
 
 		int notes, ways = 0;
 		for (notes = 0; notes * denomination <= amount; notes++) {

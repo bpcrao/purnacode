@@ -45,7 +45,7 @@ public class LinkedListAdder {
 		result.printLinkedList();
 		System.out.println("------------------");
 	}
-
+ 
 	/**
 	 * @param linkedList
 	 * @param linkedListTwo

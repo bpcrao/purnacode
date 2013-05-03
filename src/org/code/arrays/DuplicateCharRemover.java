@@ -14,7 +14,7 @@ public class DuplicateCharRemover {
 		removeDuplicates(strWithDup);
 		System.out.println(strWithDup);
 	}
-
+ 
 	/**
 	 * Without using extra(large) memory Complexity O(n^2)
 	 * 

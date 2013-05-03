@@ -25,13 +25,13 @@ public class GraphBuilder {
 		int edges = Integer.parseInt(reader.readLine());
 		String line;
 
-		Graph fraph = new Graph(vertices);
+		Graph graph = new Graph(vertices);
 
 		while ((line = reader.readLine()) != null && !line.isEmpty()) {
 			System.out.println(line);
-			fraph.addEdge(Integer.parseInt(line.split(" ")[0]),
+			graph.addEdge(Integer.parseInt(line.split(" ")[0]),
 					Integer.parseInt(line.split(" ")[1]));
 		}
-		return fraph;
+		return graph;
 	}
 }

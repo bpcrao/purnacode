@@ -36,13 +36,6 @@ public class Graph {
 	}
 
 	/**
-	 * 
-	 */
-	public Graph() {
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
 	 * add an edge between two vertices
 	 * 
 	 * @param vertexA

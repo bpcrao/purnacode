@@ -29,7 +29,6 @@ public class KthElement {
 	 * @param i
 	 */
 	private static int findKthElement(Object[] objects, int kth) {
-		System.out.println("findKte");
 		int i = rd.nextInt(objects.length);
 		ArrayList listOne = new ArrayList<>();
 		ArrayList listTwo = new ArrayList<>();
