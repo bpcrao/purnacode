@@ -29,7 +29,7 @@ public class BreadthFirstSearch {
 	 */
 	private void bfs(DirectionalGraph graph, int vertex) {
 
-		Queue<Integer> vertexQueue = new ConcurrentLinkedQueue<>();
+		Queue<Integer> vertexQueue = new ConcurrentLinkedQueue<Integer>();
 		visited[vertex] = true;
 		vertexQueue.add(vertex);
 		int distance = 0;

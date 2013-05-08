@@ -16,7 +16,7 @@ public class KthElement {
 
 	public static void main(String[] args) {
 		int[] arr = { 9, 7, 3, 1, 2, 4, 6, 5 };
-		ArrayList ar = new ArrayList();
+		ArrayList ar = new ArrayList<Integer>();
 		for (int i = 0; i < arr.length; i++) {
 			ar.add(new Integer(arr[i]));
 		}
@@ -30,12 +30,12 @@ public class KthElement {
 	 */
 	private static int findKthElement(Object[] objects, int kth) {
 		int i = rd.nextInt(objects.length);
-		ArrayList listOne = new ArrayList<>();
-		ArrayList listTwo = new ArrayList<>();
+		ArrayList listOne = new ArrayList<Integer>();
+		ArrayList listTwo = new ArrayList<Integer>();
 		for (int j = 0; j < objects.length; j++) {
-			if ((int) objects[j] < (int) objects[i]) {
+			if ( (Integer)objects[j] < (Integer) objects[i]) {
 				listOne.add(objects[j]);
-			} else if ((int) objects[j] > (int) objects[i]) {
+			} else if ((Integer) objects[j] >(Integer)objects[i]) {
 				listTwo.add(objects[j]);
 			}
 		}
@@ -46,7 +46,7 @@ public class KthElement {
 			return findKthElement(listTwo.toArray(), kth
 					- (objects.length - listTwo.size()));
 		} else {
-			return (int) objects[i];
+			return (Integer) objects[i];
 		}
 	}
 
