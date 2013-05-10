@@ -22,17 +22,19 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
 			Node<Key, Value> nodeTemp = new Node<Key, Value>(key, value);
 			if (this.root == null) {
 				this.root = nodeTemp;
-				
+
 			}
 			return nodeTemp;
 		}
 		int compareTo = key.compareTo((Key) node.keyT);
 		if (compareTo < 0) {
 			node.left = addNode(node.left, key, value);
-			node.left.parent=node;
+			node.left.isRight = false;
+			node.left.parent = node;
 		} else if (compareTo > 0) {
 			node.right = addNode(node.right, key, value);
-			node.right.parent=node;
+			node.left.isRight = true;
+			node.right.parent = node;
 		} else {
 			node.keyT = key;
 			node.value = value;
@@ -69,18 +71,18 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
 	 */
 	public static void main(String[] args) {
 		BinarySearchTree<Integer, String> bst = new BinarySearchTree<Integer, String>();
-		bst.addNode(new Integer(5), "seven");
-		bst.addNode(new Integer(6), "eight");
-		bst.addNode(new Integer(3), "nine");
-		bst.addNode(new Integer(8), "five");
-		bst.addNode(new Integer(4), "six");
-		bst.addNode(new Integer(7), "four");
-		bst.addNode(new Integer(2), "three");
-		bst.addNode(new Integer(10), "ten");
-		bst.addNode(new Integer(1), "two");
-		bst.addNode(new Integer(9), "one");
-		printInOrder(bst.root);
-		checkifitsBalancedTree(bst.root);
+		bst.addNode(new Integer(5), "5");
+		bst.addNode(new Integer(6), "6");
+		bst.addNode(new Integer(3), "3");
+		bst.addNode(new Integer(8), "8");
+		bst.addNode(new Integer(4), "4");
+		bst.addNode(new Integer(7), "7");
+		bst.addNode(new Integer(2), "2");
+		bst.addNode(new Integer(10), "10");
+		bst.addNode(new Integer(1), "1");
+		bst.addNode(new Integer(9), "9");
+		// printInOrder(bst.root);
+		// checkifitsBalancedTree(bst.root);
 		List<List<Node>> nodeList = new ArrayList<List<Node>>();
 		ArrayList<Node> element = new ArrayList<Node>();
 		element.add(bst.root);
@@ -91,9 +93,14 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
 			System.out.println(lis);
 		}
 
-		Node in = inOrderSuccessorOf(6, bst.root);
-		System.out.println(in);
+	
+		// Node in = inOrderSuccessorOf(6, bst.root);
+		// System.out.println(in);
 	}
+
+
+
+
 
 	/**
 	 * @param i
@@ -217,6 +224,7 @@ class Node<T extends Comparable<T>, Value> {
 	Node<T, Value> left;
 	Node<T, Value> right;
 	Node<T, Value> parent;
+	public boolean isRight;
 
 	Node(T key, Value val) {
 		this.keyT = key;

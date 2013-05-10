@@ -4,6 +4,7 @@
 package org.code.recursion;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -13,7 +14,7 @@ import java.util.List;
 public class Permutations {
 
 	public static void main(String[] args) {
-
+		System.out.println(Permutations.permute("abc"));
 	}
 
 	/**
@@ -30,22 +31,20 @@ public class Permutations {
 	 * @param permutations
 	 */
 	public static List<String> permutes(String word) {
-		List<String> permutations = new ArrayList<String>();
-		System.out.println("Permuting : " + word);
-		if (word.length() == 1) {
 
-			permutations.add(word);
-			return permutations;
+		List<String> theList = new ArrayList<String>();
+		if (word.length() == 1) {
+			theList.add(word);
+			return theList;
 		} else {
-			String charOne = word.charAt(0) + "";
-			List<String> list = permute(word.substring(1));
-			System.out.println(charOne + "=>" + list);
-			for (String str : list) {
-				ArrayList<String> tempList = insertAtAll(charOne, str);
-				permutations.addAll(tempList);
+			List<String> lis= permutes(word.substring(1));
+			for (Iterator iterator = lis.iterator(); iterator.hasNext();) {
+				String string = (String) iterator.next();
+				theList.addAll(insertAtAll(word.charAt(0) + "", string));	
 			}
-			return permutations;
+			
 		}
+		return theList;
 
 	}
 
@@ -53,22 +52,12 @@ public class Permutations {
 	 * @param str
 	 * @return
 	 */
-	private static ArrayList<String> insertAtAll(String prefix, String str) {
-		System.out.println("MERGING=" + prefix + "STR=" + str);
-		ArrayList<String> theList = new ArrayList<String>();
+	private static List<String> insertAtAll(String prefix, String str) {
+		List<String> theList = new ArrayList<String>();
 		for (int index = 0; index <= str.length(); index++) {
-			theList.add(str.subSequence(0, index) + prefix
-					+ str.substring(index));
+			theList.add(str.substring(0, index) + prefix + str.substring(index));
 		}
 		return theList;
 	}
 
-	/**
-	 * @param string
-	 * @return
-	 */
-	public static List<String> permute2(String theString) {
-
-		return null;
-	}
 }

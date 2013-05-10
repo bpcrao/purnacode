@@ -1,4 +1,5 @@
 package org.code.arrays;
+
 /**
  * 
  */
@@ -10,11 +11,11 @@ package org.code.arrays;
 public class DuplicateCharRemover {
 
 	public static void main(String args[]) {
-		char[] strWithDup = { 'h','h', 'e', 'l', 'l', 'o','e','s','s' };
+		char[] strWithDup = { 'h', 'h', 'e', 'l', 'l', 'o', 'e', 's', 's' };
 		removeDuplicates(strWithDup);
 		System.out.println(strWithDup);
 	}
- 
+
 	/**
 	 * Without using extra(large) memory Complexity O(n^2)
 	 * 

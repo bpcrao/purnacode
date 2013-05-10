@@ -24,7 +24,7 @@ public class NQueens {
 	}
 
 	public static void main(String[] args) {
-		NQueens nQueens = new NQueens(8);
+		NQueens nQueens = new NQueens(4);
 		nQueens.placeQueen(0);
 	}
 
@@ -32,13 +32,12 @@ public class NQueens {
 	 * @param row
 	 */
 	private void placeQueen(int row) {
-
 		if (row == this.size) {
 			printBoard();
 			return;
 		}
-		for (int i = 0; i < this.size; i++) {
-			queenPlaceInRow[row] = i;
+		for (int col = 0; col < this.size; col++) {
+			queenPlaceInRow[row] = col;
 			if (check(row)) {
 				placeQueen(row + 1);
 			}
@@ -51,12 +50,13 @@ public class NQueens {
 	 * @return
 	 */
 	private boolean check(int row) {
-		for (int i = 0; i < row; i++) {
-			int diffX = Math.abs(queenPlaceInRow[row] - queenPlaceInRow[i]);
-			int diffY = row - i;
-			if (diffX == 0 || diffX == diffY) {
+		for (int index = 0; index < row; index++) {
+			int diffX = Math.abs(queenPlaceInRow[index] - queenPlaceInRow[row]);
+			int diffY = row - index;
+			if (diffX == 0 || diffY == diffX) {
 				return false;
 			}
+
 		}
 		return true;
 	}

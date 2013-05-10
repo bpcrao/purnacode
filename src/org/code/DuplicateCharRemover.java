@@ -19,29 +19,45 @@ public class DuplicateCharRemover {
 	/**
 	 * Without using extra(large) memory Complexity O(n^2)
 	 * 
+	 * a a index current index
+	 * 
 	 * @param strWithDup
 	 */
 	/**
 	 * @param word
 	 */
 	private static void removeDuplicates(char[] word) {
-		int currentIndex = 1;
-		for (int i = 0; i < word.length; i++) {
-			int j;
-			for (j = 0; j < currentIndex; j++) {
-				if (word[i] == word[j]) {
+		int currentIndex = 0;
+		for (int index = 0; index < word.length; index++) {
+			int j = 0;
+			for (; j < index; j++) {
+				if (word[j] == word[index] && j != index) {
 					break;
-				}
+				} 
 			}
-			if (currentIndex == j) {
-				word[currentIndex++] = word[i];
+			if(j==index){
+				word[currentIndex++]=word[index];
 			}
-
+			
 		}
-
-		while (currentIndex < word.length) {
-			word[currentIndex++] = ' ';
+		for(;currentIndex<word.length;currentIndex++){
+			word[currentIndex]= ' ';
 		}
+	}
+
+	/**
+	 * @param word
+	 * @param currentIndex
+	 * @param index
+	 * @return
+	 */
+	private static int checkExist(int index, int currentIndex, char[] word) {
+		int subIndex = index;
+		for (; subIndex <= currentIndex; subIndex++) {
+			if (word[subIndex] == word[index])
+				return subIndex;
+		}
+		return subIndex;
 	}
 
 }

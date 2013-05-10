@@ -1,4 +1,5 @@
 package org.code;
+
 /**
  * class which can print pascal triangle in 2 ways
  * 1) matrix way 
@@ -22,7 +23,7 @@ package org.code;
 public class PascalTriangle {
 
 	public static void main(String ar[]) {
-		//printPascal(9);
+		// printPascal(9);
 		printPascalMatrix(9);
 	}
 
@@ -35,12 +36,11 @@ public class PascalTriangle {
 		int[][] pascalTr = new int[size][];
 		for (int index = 0; index < size; index++) {
 			pascalTr[index] = new int[index + 1];
-			for (int colIndex = 0; colIndex < pascalTr[index].length; colIndex++) {
-				if (colIndex == 0 || colIndex == index) {
-					pascalTr[index][colIndex] = 1;
-				} else if (index > 1) {
-					pascalTr[index][colIndex] = pascalTr[index - 1][colIndex]
-							+ pascalTr[index - 1][colIndex - 1];
+			for (int i = 0; i <= index; i++) {
+				if (i == 0 || i == index) {
+					pascalTr[index][i] = 1;
+				}else{
+					pascalTr[index][i] = pascalTr[index-1][i-1]+pascalTr[index-1][i]  ;
 				}
 			}
 		}

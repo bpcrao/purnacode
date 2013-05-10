@@ -43,10 +43,7 @@ public class MergeSort {
 	 */
 	private static void merge(int[] numbers, int low, int mid, int midHigh,
 			int high) {
-		int[] auxNumbers = new int[numbers.length];
-		for (int j = low; j <= high; j++) {
-			auxNumbers[j] = numbers[j];
-		}
+		int[] auxNumbers = numbers.clone();
 
 		int i = low;
 		int k = midHigh;

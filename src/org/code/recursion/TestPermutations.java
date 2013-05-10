@@ -34,13 +34,6 @@ public class TestPermutations {
 	}
 	
 	
-	@Test
-	public void testDouble2() {
-		Permutations permutations = new Permutations();
-		List<String> list = Permutations.permute2(new String("ABC"));
-		System.out.println(list);
-		assertEquals(6,list.size());
-		assertEquals("[ABC, BAC, BCA, ACB, CAB, CBA]",list.toString());
-	}
+
 }
  

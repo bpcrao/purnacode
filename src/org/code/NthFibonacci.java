@@ -15,9 +15,12 @@ public class NthFibonacci {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		for (int i = 1; i <10; i++) {
-			System.out.print(fibo(i) +" ");	
+		
+		for (int i = 0; i < 10; i++) {
+			System.out.print(fibo(i) +" ");
 		}
+				
+		
 		 
 	}
 
@@ -26,10 +29,9 @@ public class NthFibonacci {
 	 * @return
 	 */
 	private static int fibo(int i) {
-		if (i == 1) {
+		if(i==0 ){
 			return 0;
-		}
-		if (i == 2) {
+		}else if(i==1 ){
 			return 1;
 		}
 		

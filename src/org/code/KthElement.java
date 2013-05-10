@@ -25,8 +25,10 @@ public class KthElement {
 	}
 
 	/**
+	 * Finds the Kth Rank element in the List of objects
+	 * 
 	 * @param objects
-	 * @param i
+	 * @param Kth
 	 */
 	private static int findKthElement(Object[] objects, int kth) {
 		int i = rd.nextInt(objects.length);
