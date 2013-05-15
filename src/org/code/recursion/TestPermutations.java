@@ -19,7 +19,7 @@ public class TestPermutations {
 	@Test @Ignore
 	public void testSingle() {
 		Permutations permutations = new Permutations();
-		List<String> list = Permutations.permute(new String("A"));
+		List<String> list = Permutations.permutes(new String("A"));
 		assertEquals(1,list.size());
 	}
 
@@ -27,7 +27,7 @@ public class TestPermutations {
 	@Test
 	public void testDouble() {
 		Permutations permutations = new Permutations();
-		List<String> list = Permutations.permute(new String("ABC"));
+		List<String> list = Permutations.permutes(new String("ABC"));
 		System.out.println(list);
 		assertEquals(6,list.size());
 		assertEquals("[ABC, BAC, BCA, ACB, CAB, CBA]",list.toString());

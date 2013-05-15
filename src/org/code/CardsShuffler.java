@@ -62,4 +62,5 @@ public class CardsShuffler {
 	private static void printCards(int[] cards) {
 		System.out.println(Arrays.toString(cards));
 	}
+
 }

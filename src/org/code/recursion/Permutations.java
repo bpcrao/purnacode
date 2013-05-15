@@ -14,15 +14,7 @@ import java.util.List;
 public class Permutations {
 
 	public static void main(String[] args) {
-		System.out.println(Permutations.permute("abc"));
-	}
-
-	/**
-	 * @param string
-	 */
-	public static List<String> permute(String word) {
-
-		return permutes(word);
+		System.out.println(Permutations.permutes("abc"));
 	}
 
 	/**
